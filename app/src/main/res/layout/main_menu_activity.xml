@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/quoteBox"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/viewLogButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/setreminderButton"
+        android:layout_alignStart="@+id/setreminderButton"
+        android:layout_below="@+id/setreminderButton"
+        android:text="View Log" />
+
+    <Button
+        android:id="@+id/setreminderButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/setgoalButton"
+        android:layout_alignStart="@+id/setgoalButton"
+        android:layout_below="@+id/setgoalButton"
+        android:text="Set Reminder" />
+
+    <Button
+        android:id="@+id/setgoalButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/viewLogButton"
+        android:layout_alignStart="@+id/viewLogButton"
+        android:layout_below="@+id/viewLogButton"
+        android:text="Set Goal" />
+
+    <Button
+        android:id="@+id/viewLogButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Add Exercise" />
+
+</RelativeLayout>
