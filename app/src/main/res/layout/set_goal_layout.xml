@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/setAGoalTitle"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Set a Goal"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="45dp"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:text="On..."
+        android:layout_below="@+id/setAGoalTitle"
+        android:layout_alignLeft="@+id/setAGoalTitle"
+        android:layout_alignStart="@+id/setAGoalTitle" />
+
+    <Button
+        android:id="@+id/dateSetButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:onClick="calendarButton"
+        android:text="(Date)" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/dateSetButton"
+        android:layout_alignStart="@+id/dateSetButton"
+        android:layout_centerVertical="true"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:text="For..." />
+
+    <Button
+        android:id="@+id/muscleGroupButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:text="(Muscle Group)" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/muscleGroupButton"
+        android:layout_alignStart="@+id/muscleGroupButton"
+        android:layout_below="@+id/muscleGroupButton"
+        android:layout_marginTop="21dp"
+        android:text="# of Reps..."
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/setButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/setAGoalTitle"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/setAGoalTitle"
+        android:layout_marginBottom="11dp"
+        android:text="SET" />
+
+    <EditText
+        android:id="@+id/numberofRepsInput"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_below="@+id/textView5"
+        android:ems="10"
+        android:inputType="number" />
+</RelativeLayout>

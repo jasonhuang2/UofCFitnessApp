@@ -1,6 +1,7 @@
 package com.example.jasonhuang.uofcfitnessapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -37,24 +38,10 @@ public class MainActivity extends AppCompatActivity {
         conn = connectionclass(un, pass, db, ip);
         if(conn == null){
             quoteBox.setText("CONNECTION FAILED");
-        }else{
-           // quoteBox.setText("Successful connection");
-            try{
 
-
-
-
-                stmt.execute(query);
-            }catch(SQLException e){
-                e.printStackTrace();
-            }
 
         }
     }
-
-
-
-
     //connection class
     @SuppressLint("NewApi")
     public Connection connectionclass (String user, String pass, String db, String server){
@@ -73,5 +60,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return connection;
+    }
+
+    public void setGoalButton(View v){
+        Intent intent = new Intent(this, setGoalActivity.class);
+        startActivity(intent);
     }
 }

@@ -37,6 +37,7 @@
         android:layout_alignLeft="@+id/viewLogButton"
         android:layout_alignStart="@+id/viewLogButton"
         android:layout_below="@+id/viewLogButton"
+        android:onClick="setGoalButton"
         android:text="Set Goal" />
 
     <Button
