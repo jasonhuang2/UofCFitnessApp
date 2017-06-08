@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TextView;
 
 public class setGoalActivity extends AppCompatActivity {
 
@@ -17,12 +18,22 @@ public class setGoalActivity extends AppCompatActivity {
         //For the back button
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        TextView bob = (TextView)findViewById(R.id.textView);
+        Intent myintent = getIntent();
+        String date = myintent.getStringExtra("Date");
+        bob.setText(date);
+
     }
     public void calendarButton(View v){
         Intent intent2 = new Intent(this, CalendarActivity.class);
+        //intent2.putExtra("Date", "10");
         startActivity(intent2);
 
 
 
     }
-}
+
+
+    }
+

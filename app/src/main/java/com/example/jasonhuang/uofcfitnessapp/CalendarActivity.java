@@ -1,5 +1,6 @@
 package com.example.jasonhuang.uofcfitnessapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,10 +27,14 @@ public class CalendarActivity extends AppCompatActivity {
 
 
     public void calendarConfirmButton(View v){
+
        DatePicker thedatePicker = (DatePicker)findViewById(R.id.datePicker) ;
         Button date = (Button)findViewById(R.id.dateSetButton);
         int day = thedatePicker.getDayOfMonth();
-        date.setText(Integer.toString(day));
+
+        Intent intent2 = new Intent(this, setGoalActivity.class);
+        intent2.putExtra("Date",Integer.toString(day));
+        startActivity(intent2);
     }
 
   //  public int getDay(){

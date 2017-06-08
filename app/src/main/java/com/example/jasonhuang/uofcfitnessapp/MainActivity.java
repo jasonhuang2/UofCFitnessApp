@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import java.util.Random;
+
 
 import com.example.jasonhuang.uofcfitnessapp.R;
 
@@ -18,6 +18,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             quoteBox.setText("CONNECTION FAILED");}
         else{    try {
                 Random rand = new Random();
-                int var1 = rand.nextInt(8) + 1;
+                int var1 = rand.nextInt(16) + 1;
                 //Inserting into the database with db = database name
                 //dbo.names is the table name
                 //standard format for accessing the sql server provided through Tamer is the following

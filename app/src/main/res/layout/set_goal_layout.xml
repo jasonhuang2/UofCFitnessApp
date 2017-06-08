@@ -87,4 +87,12 @@
         android:layout_below="@+id/textView5"
         android:ems="10"
         android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_alignBottom="@+id/setAGoalTitle"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
