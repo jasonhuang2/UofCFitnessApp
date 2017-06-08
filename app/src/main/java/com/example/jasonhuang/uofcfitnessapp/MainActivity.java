@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import java.util.Random;
 
 import com.example.jasonhuang.uofcfitnessapp.R;
 
@@ -40,10 +41,12 @@ public class MainActivity extends AppCompatActivity {
         if(conn == null){
             quoteBox.setText("CONNECTION FAILED");}
         else{    try {
+                Random rand = new Random();
+                int var1 = rand.nextInt(8) + 1;
                 //Inserting into the database with db = database name
                 //dbo.names is the table name
                 //standard format for accessing the sql server provided through Tamer is the following
-                String query = "SELECT * FROM " + db + ".dbo.quotes WHERE id = 1;";
+                String query = "SELECT * FROM " + db + ".dbo.quotes WHERE id = "+var1+";";
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
                 if (rs.next() == true){
