@@ -14,6 +14,7 @@ import com.example.jasonhuang.uofcfitnessapp.R;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -37,8 +38,20 @@ public class MainActivity extends AppCompatActivity {
         TextView quoteBox = (TextView)findViewById(R.id.quoteBox);
         conn = connectionclass(un, pass, db, ip);
         if(conn == null){
-            quoteBox.setText("CONNECTION FAILED");
-
+            quoteBox.setText("CONNECTION FAILED");}
+        else{    try {
+                //Inserting into the database with db = database name
+                //dbo.names is the table name
+                //standard format for accessing the sql server provided through Tamer is the following
+                String query = "SELECT * FROM " + db + ".dbo.quotes WHERE id = 1;";
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+                if (rs.next() == true){
+                    String quote1 = rs.getString("quote");
+                quoteBox.setText(quote1);}
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
         }
     }
