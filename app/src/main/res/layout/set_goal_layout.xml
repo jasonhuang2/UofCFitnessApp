@@ -56,6 +56,7 @@
         android:layout_alignStart="@+id/textView4"
         android:layout_below="@+id/textView4"
         android:onClick="muscleGroupButton"
+        android:textAlignment="center"
         android:text="(Muscle Group)" />
 
     <TextView

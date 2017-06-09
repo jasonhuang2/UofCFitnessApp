@@ -1,10 +1,12 @@
 package com.example.jasonhuang.uofcfitnessapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class muscleGroupActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -70,6 +72,17 @@ public class muscleGroupActivity extends AppCompatActivity implements AdapterVie
     //The implementation requires this method; just leave it empty
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+    public void confirmButton(View v){
+        Spinner exerciseSelection = (Spinner)findViewById(R.id.exerciseGroupSpinner);
+        Spinner muscleGroupSelection = (Spinner)findViewById(R.id.muscleGroupSpinner);
+
+
+        Intent intent = new Intent(this, setGoalActivity.class);
+        intent.putExtra("muscleGroupName", muscleGroupSelection.getSelectedItem().toString());
+        intent.putExtra("exerciseName", exerciseSelection.getSelectedItem().toString());
+        startActivity(intent);
 
     }
 }

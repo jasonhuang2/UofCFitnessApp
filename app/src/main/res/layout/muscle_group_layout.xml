@@ -38,5 +38,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/exerciseGroupSpinner"
         android:layout_marginBottom="44dp"
+        android:onClick="confirmButton"
         android:text="Ok" />
 </RelativeLayout>

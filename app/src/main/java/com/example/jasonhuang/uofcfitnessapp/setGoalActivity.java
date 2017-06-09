@@ -28,8 +28,21 @@ public class setGoalActivity extends AppCompatActivity {
         if(date == null){                                                       //I need it to print (Date) instead of Null/Null/Null
             calendarButtonDate.setText("(Date)");
         }else{
-            calendarButtonDate.setText(month + "/" + date + "/" + year);
+            calendarButtonDate.setText(month + " / " + date + " / " + year);
         }
+
+        Button muscleExerciseText = (Button)findViewById((R.id.muscleGroupButton));
+        Intent myintent2 = getIntent();
+
+        String muscleGroupName = myintent2.getStringExtra("muscleGroupName");
+        String exerciseName = myintent2.getStringExtra("exerciseName");
+
+        if(muscleGroupName == null){
+            muscleExerciseText.setText("(Muscle Group and Exercise)");
+        }else{
+            muscleExerciseText.setText(muscleGroupName + " / " + exerciseName);
+        }
+
     }
 
 
