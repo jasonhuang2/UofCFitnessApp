@@ -31,11 +31,11 @@
         android:id="@+id/dateSetButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_below="@+id/textView2"
         android:onClick="calendarButton"
-        android:text="(Date)" />
+        android:text="(Date)"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView4"
@@ -88,11 +88,4 @@
         android:ems="10"
         android:inputType="number" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_alignBottom="@+id/setAGoalTitle"
-        android:layout_centerHorizontal="true" />
 </RelativeLayout>

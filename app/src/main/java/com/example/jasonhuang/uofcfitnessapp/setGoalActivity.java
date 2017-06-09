@@ -19,21 +19,26 @@ public class setGoalActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView bob = (TextView)findViewById(R.id.textView);
-        Intent myintent = getIntent();
-        String date = myintent.getStringExtra("Date");
-        bob.setText(date);
 
+        Button calendarButtonDate = (Button)findViewById(R.id.dateSetButton);
+        Intent myintent = getIntent();
+
+        String date = myintent.getStringExtra("Date");
+        String month = myintent.getStringExtra("Month");
+        String year = myintent.getStringExtra("Year");
+
+
+        if(date == null){                                                       //I need it to print (Date) instead of Null/Null/Null
+            calendarButtonDate.setText("(Date)");
+        }else{
+            calendarButtonDate.setText(month + "/" + date + "/" + year);
+        }
     }
+
     public void calendarButton(View v){
         Intent intent2 = new Intent(this, CalendarActivity.class);
-        //intent2.putExtra("Date", "10");
         startActivity(intent2);
-
-
-
     }
 
-
-    }
+}
 

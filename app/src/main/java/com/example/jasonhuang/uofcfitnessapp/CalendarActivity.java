@@ -18,30 +18,19 @@ public class CalendarActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-  //  DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker);
-   // int day = datePicker.getDayOfMonth();
-    //int month = datePicker.getMonth() + 1;
-    //int year = datePicker.getYear();
-
-
-
 
     public void calendarConfirmButton(View v){
 
-       DatePicker thedatePicker = (DatePicker)findViewById(R.id.datePicker) ;
-        Button date = (Button)findViewById(R.id.dateSetButton);
-        int day = thedatePicker.getDayOfMonth();
+         DatePicker theDatePicker = (DatePicker)findViewById(R.id.datePicker) ;
+
+        int day = theDatePicker.getDayOfMonth();
+        int month = theDatePicker.getMonth() + 1;
+        int year = theDatePicker.getYear();
 
         Intent intent2 = new Intent(this, setGoalActivity.class);
         intent2.putExtra("Date",Integer.toString(day));
+        intent2.putExtra("Month",Integer.toString(month));
+        intent2.putExtra("Year",Integer.toString(year));
         startActivity(intent2);
     }
-
-  //  public int getDay(){
-    //    DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker);
-      //  int day = datePicker.getDayOfMonth();
-
-        //return day;
-    //}
-
 }
