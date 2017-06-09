@@ -2,6 +2,7 @@
     <string name="app_name">UofCFitnessApp</string>
 
     <string-array name="muscleGroupList">
+        <item>(Muscle Group)</item>
         <item>Leg</item>
         <item>Arm</item>
         <item>Back</item>
@@ -21,6 +22,7 @@
 
     <string-array name="backList">
         <item>Pullup</item>
+        <item>Dumbbell Row</item>
     </string-array>
 
     <string-array name="frontBodyList">
