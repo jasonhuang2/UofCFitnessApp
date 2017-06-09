@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.TextView;
 
 public class setGoalActivity extends AppCompatActivity {
 
@@ -27,7 +25,6 @@ public class setGoalActivity extends AppCompatActivity {
         String month = myintent.getStringExtra("Month");
         String year = myintent.getStringExtra("Year");
 
-
         if(date == null){                                                       //I need it to print (Date) instead of Null/Null/Null
             calendarButtonDate.setText("(Date)");
         }else{
@@ -35,10 +32,18 @@ public class setGoalActivity extends AppCompatActivity {
         }
     }
 
+
+
+
+    //Button method to get to the calendar activity to set up a date
     public void calendarButton(View v){
         Intent intent2 = new Intent(this, CalendarActivity.class);
         startActivity(intent2);
     }
-
+    //Button method to get to the muscle selection activity to set up a date
+    public void muscleGroupButton(View v){
+        Intent intent = new Intent(this, muscleGroupActivity.class);
+        startActivity(intent);
+    }
 }
 

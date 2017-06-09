@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="27dp"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:text="Select a Muscle Group and Exercise"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:id="@+id/muscleGroupSpinner"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_centerVertical="true" />
+
+    <Spinner
+        android:id="@+id/exerciseGroupSpinner"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/muscleGroupSpinner"
+        android:layout_alignStart="@+id/muscleGroupSpinner"
+        android:layout_below="@+id/muscleGroupSpinner"
+        android:layout_marginTop="40dp" />
+
+    <Button
+        android:id="@+id/muscleGroupFinishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/exerciseGroupSpinner"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/exerciseGroupSpinner"
+        android:layout_marginBottom="44dp"
+        android:text="Ok" />
+</RelativeLayout>

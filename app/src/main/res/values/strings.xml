@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">UofCFitnessApp</string>
+
+    <string-array name="muscleGroupList">
+        <item>Leg</item>
+        <item>Arm</item>
+        <item>Back</item>
+        <item>Front Body</item>
+    </string-array>
+
+    <string-array name="legList">
+        <item>Squat</item>
+        <item>Deadlift</item>
+    </string-array>
+
+    <string-array name="armList">
+        <item>Bicep Curl</item>
+        <item>Shoulder Press</item>
+        <item>Tricep Extend</item>
+    </string-array>
+
+    <string-array name="backList">
+        <item>Pullup</item>
+    </string-array>
+
+    <string-array name="frontBodyList">
+        <item>Flat Bench</item>
+        <item>Plank</item>
+    </string-array>
+
 </resources>

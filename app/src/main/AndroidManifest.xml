@@ -21,7 +21,11 @@
         <activity
             android:name=".setGoalActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".CalendarActivity"
+        <activity
+            android:name=".CalendarActivity"
+            android:parentActivityName=".setGoalActivity" />
+        <activity
+            android:name=".muscleGroupActivity"
             android:parentActivityName=".setGoalActivity"></activity>
     </application>
 
