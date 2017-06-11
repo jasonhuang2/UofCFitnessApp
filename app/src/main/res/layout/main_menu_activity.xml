@@ -13,7 +13,7 @@
         android:textSize="30dp" />
 
     <Button
-        android:id="@+id/viewLogButton"
+        android:id="@+id/addExerciseButton"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/setreminderButton"
@@ -28,15 +28,16 @@
         android:layout_alignLeft="@+id/setgoalButton"
         android:layout_alignStart="@+id/setgoalButton"
         android:layout_below="@+id/setgoalButton"
+        android:onClick="setReminderButton"
         android:text="Set Reminder" />
 
     <Button
         android:id="@+id/setgoalButton"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/viewLogButton"
-        android:layout_alignStart="@+id/viewLogButton"
-        android:layout_below="@+id/viewLogButton"
+        android:layout_alignLeft="@+id/addExerciseButton"
+        android:layout_alignStart="@+id/addExerciseButton"
+        android:layout_below="@+id/addExerciseButton"
         android:onClick="setGoalButton"
         android:text="Set Goal" />
 

@@ -83,4 +83,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, setGoalActivity.class);
         startActivity(intent);
     }
+    public void setReminderButton(View v){
+        Intent intent1 = new Intent(this, setReminderActivity.class);
+        startActivity(intent1);
+    }
 }

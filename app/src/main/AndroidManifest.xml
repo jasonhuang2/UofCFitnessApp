@@ -26,7 +26,8 @@
             android:parentActivityName=".setGoalActivity" />
         <activity
             android:name=".muscleGroupActivity"
-            android:parentActivityName=".setGoalActivity"></activity>
+            android:parentActivityName=".setGoalActivity" />
+        <activity android:name=".setReminderActivity"></activity>
     </application>
 
 </manifest>
