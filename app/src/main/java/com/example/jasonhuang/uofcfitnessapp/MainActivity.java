@@ -26,6 +26,15 @@ public class MainActivity extends AppCompatActivity {
     String un, pass, db, ip;
 
     @Override
+    protected void onResume() {
+        setGoalActivity.gdate = null;
+        setGoalActivity.exercise = null;
+        setGoalActivity.musclegroup = null;
+        setGoalActivity.reps = 0;
+        super.onResume();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu_activity);
