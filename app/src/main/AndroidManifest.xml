@@ -3,6 +3,7 @@
     package="com.example.jasonhuang.uofcfitnessapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -20,14 +21,26 @@
         </activity>
         <activity
             android:name=".setGoalActivity"
+            android:noHistory="false"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CalendarActivity"
+            android:noHistory="false"
             android:parentActivityName=".setGoalActivity" />
         <activity
             android:name=".muscleGroupActivity"
+            android:noHistory="false"
             android:parentActivityName=".setGoalActivity" />
-        <activity android:name=".setReminderActivity"></activity>
+        <activity
+            android:name=".reminderActivity"
+            android:parentActivityName=".MainActivity"></activity>
+        <receiver
+            android:name="BroadcastManager">
+        </receiver>
+        <service android:name=".TriggerManager"
+            android:enabled="true">
+        </service>
     </application>
+
 
 </manifest>
