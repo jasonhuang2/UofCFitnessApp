@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 //Inserting into the database with db = database name
                 //dbo.names is the table name
                 //standard format for accessing the sql server provided through Tamer is the following
-                String query = "SELECT * FROM " + db + ".dbo.quotes WHERE id = "+var1+";";
+                String query = "SELECT * FROM " + db + ".dbo.quotes WHERE id = "+var1;
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
                 if (rs.next() == true){
@@ -94,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void setReminderButton(View v){
         Intent intent = new Intent(this,reminderActivity.class);
+        startActivity(intent);
+    }
+    public void setActivityButton(View v){
+        Intent intent = new Intent(this,addExerciseActivity.class);
         startActivity(intent);
     }
 }
