@@ -6,14 +6,14 @@
         android:id="@+id/setDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
         android:onClick="alarmListener"
         android:text="SET"
-        android:layout_marginTop="14dp"
-        android:layout_below="@+id/timePicker"
-        android:layout_toLeftOf="@+id/ahhh"
-        android:layout_toStartOf="@+id/ahhh" />
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/ahhh"
+        android:layout_toLeftOf="@+id/dateButton"
+        android:layout_toStartOf="@+id/dateButton"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp" />
 
     <TimePicker
         android:id="@+id/timePicker"
@@ -25,7 +25,7 @@
 
     <TextView
         android:id="@+id/ahhh"
-        android:layout_width="100dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -37,11 +37,21 @@
         android:id="@+id/offButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/setDate"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
-        android:layout_toEndOf="@+id/ahhh"
-        android:layout_toRightOf="@+id/ahhh"
         android:onClick="offListener"
-        android:text="Off" />
+        android:text="Off"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_alignBaseline="@+id/setDate"
+        android:layout_alignBottom="@+id/setDate"
+        android:layout_toRightOf="@+id/dateButton"
+        android:layout_toEndOf="@+id/dateButton" />
+
+    <Button
+        android:id="@+id/dateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timePicker"
+        android:layout_centerHorizontal="true"
+        android:onClick="selectDate"
+        android:text="Select Date" />
 </RelativeLayout>

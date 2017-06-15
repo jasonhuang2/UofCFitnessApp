@@ -95,5 +95,10 @@ public class setGoalActivity extends AppCompatActivity {
         Intent intent = new Intent(this, muscleGroupActivity.class);
         startActivity(intent);
     }
+    public void setButtonReturn(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
+
 
