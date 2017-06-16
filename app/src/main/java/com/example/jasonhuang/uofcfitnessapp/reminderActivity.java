@@ -66,11 +66,12 @@ public class reminderActivity extends AppCompatActivity {
         calendar.set(Calendar.HOUR_OF_DAY, alarm_picker.getCurrentHour());
         calendar.set(Calendar.MINUTE, alarm_picker.getCurrentMinute());
 
-//        final Calendar dateCalendar = Calendar.getInstance();
- //          dateCalendar.set(Calendar.DAY_OF_MONTH, date_int);
-  //        dateCalendar.set(Calendar.MONTH, month_int);
-   //      dateCalendar.set(Calendar.YEAR, year_int);
-
+        /*
+        final Calendar dateCalendar = Calendar.getInstance();
+        dateCalendar.set(Calendar.DAY_OF_MONTH, date_int);
+        dateCalendar.set(Calendar.MONTH, month_int);
+        dateCalendar.set(Calendar.YEAR, year_int);
+*/
 
 
 
@@ -105,7 +106,9 @@ public class reminderActivity extends AppCompatActivity {
 
         //Alarm manager
         alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),pending_intent);
-      //  alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis() - dateCalendar.getTimeInMillis(),pending_intent);
+
+   //     alarm_manager.set(AlarmManager.RTC_WAKEUP, dateCalendar.getTimeInMillis() + calendar.getTimeInMillis(),pending_intent);
+
 
 
     }

@@ -50,6 +50,11 @@ public class setGoalActivity extends AppCompatActivity {
         String year = myintent.getStringExtra("Year");
 
 
+        if(date == null){
+            returnGdate();
+        }
+
+
         if(date == null && gdate == null){                                                       //I need it to print (Date) instead of Null/Null/Null
             calendarButtonDate.setText("(Date)");}
         else if (date != null){
@@ -95,7 +100,16 @@ public class setGoalActivity extends AppCompatActivity {
     }
 
 
+    public String returnMuscleGroup(){
+        return "h";
+    }
+    public String returnGdate(){
+        return "Hi";
+    }
+    public String returnMuscle(){
+        return "hi";
 
+    }
 
     //Button method to get to the calendar activity to set up a date
     public void calendarButton(View v){
@@ -108,7 +122,7 @@ public class setGoalActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void setButtonReturn(View v){
-        conn = connectionclass(un, pass, db, ip);
+        conn = getConnection();
         EditText repCounter = (EditText)findViewById(R.id.numberofRepsInput);
         String rep = repCounter.getText().toString();
         reps = Integer.parseInt(rep);
@@ -126,6 +140,11 @@ public class setGoalActivity extends AppCompatActivity {
         }
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+
+    }
+    //For testing
+    public Connection getConnection(){
+        return connectionclass(un, pass, db, ip);
 
     }
     public Connection connectionclass (String user, String pass, String db, String server){

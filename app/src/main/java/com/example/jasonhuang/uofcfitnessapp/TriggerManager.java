@@ -37,7 +37,7 @@ public class TriggerManager extends Service {
         notification.setContentText("Time for some gains");
 
 
-        Intent intent2 = new Intent(this, reminderActivity.class);
+        Intent intent2 = new Intent(this, MainActivity.class);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent2, PendingIntent.FLAG_UPDATE_CURRENT);
         notification.setContentIntent(pendingIntent);
