@@ -28,6 +28,10 @@
             android:noHistory="false"
             android:parentActivityName=".setGoalActivity" />
         <activity
+            android:name=".addExerciseActivity"
+            android:noHistory="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".muscleGroupActivity"
             android:noHistory="false"
             android:parentActivityName=".setGoalActivity" />
@@ -35,15 +39,18 @@
             android:name=".reminderActivity"
             android:parentActivityName=".MainActivity" />
 
-        <receiver android:name=".BroadcastManager"></receiver>
+        <receiver android:name=".BroadcastManager" />
 
         <service
             android:name=".TriggerManager"
-            android:enabled="true"></service>
+            android:enabled="true" />
 
         <activity
             android:name=".dateActivity"
-            android:parentActivityName=".reminderActivity"></activity>
+            android:parentActivityName=".reminderActivity" />
+        <activity
+            android:name=".addExerciseMuscleGroupActivity"
+            android:parentActivityName=".addExerciseActivity"></activity>
     </application>
 
 </manifest>

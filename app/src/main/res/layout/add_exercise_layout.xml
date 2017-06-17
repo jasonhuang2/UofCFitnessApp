@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        tools:text="Add a exercise to your log" />
+
+    <Button
+        android:id="@+id/addExerciseMuscleGroup"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:onClick="addExerciseButton"
+        android:text="(Muscle Group)" />
+
+    <EditText
+        android:id="@+id/addExerciseRep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addExerciseMuscleGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/addExerciseRep"
+        android:layout_alignLeft="@+id/addExerciseRep"
+        android:layout_alignStart="@+id/addExerciseRep"
+        android:layout_marginBottom="52dp"
+        android:text="# of Reps..."
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/addExerciseConfirmButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp"
+        android:text="Add Log" />
+
+</RelativeLayout>
