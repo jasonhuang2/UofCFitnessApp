@@ -23,7 +23,6 @@ public class reminderActivity extends AppCompatActivity {
 
     TextView textBox;
     Intent my_intent;
-    Button asdf;
     String date, month , year;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +39,6 @@ public class reminderActivity extends AppCompatActivity {
         textBox = (TextView)findViewById(R.id.ahhh);
 
         my_intent = new Intent(this.context, BroadcastManager.class);
-
-
     }
 
     public void alarmListener(View v){
@@ -60,21 +57,14 @@ public class reminderActivity extends AppCompatActivity {
         //IMPORTANT WHATEVER HOUR WE PICKED
         //Set calendar instance with the hour and minute we chose on the time_picker
         final Calendar calendar = Calendar.getInstance();
-     //   calendar.set(Calendar.DAY_OF_MONTH, date_int);
-      //  calendar.set(Calendar.MONTH, month_int);
-       // calendar.set(Calendar.YEAR, year_int);
+        /*
+        calendar.set(Calendar.DAY_OF_MONTH, Integer.parseInt(date));
+        calendar.set(Calendar.MONTH, Integer.parseInt(month));
+        calendar.set(Calendar.YEAR, Integer.parseInt(year));
         calendar.set(Calendar.HOUR_OF_DAY, alarm_picker.getCurrentHour());
         calendar.set(Calendar.MINUTE, alarm_picker.getCurrentMinute());
-
-        /*
-        final Calendar dateCalendar = Calendar.getInstance();
-        dateCalendar.set(Calendar.DAY_OF_MONTH, date_int);
-        dateCalendar.set(Calendar.MONTH, month_int);
-        dateCalendar.set(Calendar.YEAR, year_int);
-*/
-
-
-
+        */
+        calendar.set(year_int, month_int,date_int, alarm_picker.getCurrentHour(),alarm_picker.getCurrentMinute());
 
 
         //Get string value of inputted hour and minute
@@ -85,16 +75,15 @@ public class reminderActivity extends AppCompatActivity {
         String string_hour = String.valueOf(hour);
         String string_minute = String.valueOf(minute);
 
-        //Convert 24-hour to 12 hour
-        if(hour > 12){
-            hour = hour - 12;
-        }
+        //If minutes is less than 10, add an 0. EX: 10:7 becomes 10:07
         if(minute < 10){
             string_minute = "0" + String.valueOf(minute);
-
         }
+
         if(hour > 12){
-            //Now display it onto the textbox
+            //Conversion 24 hours to 12 hours.
+            hour = hour - 12;
+            string_hour = Integer.toString(hour);
             textBox.setText("Alarm set to: " + string_hour + ":" + string_minute + "pm" + " on " + month + "/" + date + "/" + year);
         }else{
             //Now display it onto the textbox
@@ -107,12 +96,8 @@ public class reminderActivity extends AppCompatActivity {
         //Alarm manager
         alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),pending_intent);
 
-   //     alarm_manager.set(AlarmManager.RTC_WAKEUP, dateCalendar.getTimeInMillis() + calendar.getTimeInMillis(),pending_intent);
-
-
 
     }
-
     public void offListener(View v){
         textBox.setText("Alarm is shut off");
 

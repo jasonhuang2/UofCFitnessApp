@@ -21,14 +21,15 @@ public class dateActivity extends AppCompatActivity {
 
         DatePicker theDatePicker = (DatePicker)findViewById(R.id.datePicker2) ;
 
+
         int day = theDatePicker.getDayOfMonth();
-        int month = theDatePicker.getMonth() + 1;
+        int month = theDatePicker.getMonth();
         int year = theDatePicker.getYear();
 
         Intent intent2 = new Intent(this, reminderActivity.class);
-        intent2.putExtra("Date",Integer.toString(day));
-        intent2.putExtra("Month",Integer.toString(month));
-        intent2.putExtra("Year",Integer.toString(year));
+        intent2.putExtra("Date",String.valueOf(day));
+        intent2.putExtra("Month",String.valueOf(month));
+        intent2.putExtra("Year",String.valueOf(year));
         startActivity(intent2);
     }
 }
