@@ -48,18 +48,21 @@ public class muscleGroupActivity extends AppCompatActivity implements AdapterVie
             myAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             exerciseSelection.setAdapter(myAdapter2);
         }
+        //If user selected Leg in spinner 1, display the second spinner and its corresponding exercises for legs
         if(item.equals("Arm")){
             ArrayAdapter<String> myAdapter3 = new ArrayAdapter<String>(muscleGroupActivity.this, android.R.layout.simple_list_item_1,
                     getResources().getStringArray(R.array.armList));
             myAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             exerciseSelection.setAdapter(myAdapter3);
         }
+        //If user selected Leg in spinner 1, display the second spinner and its corresponding exercises for legs
         if(item.equals("Back")){
             ArrayAdapter<String> myAdapter4 = new ArrayAdapter<String>(muscleGroupActivity.this, android.R.layout.simple_list_item_1,
                     getResources().getStringArray(R.array.backList));
             myAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             exerciseSelection.setAdapter(myAdapter4);
         }
+        //If user selected Leg in spinner 1, display the second spinner and its corresponding exercises for legs
         if(item.equals("Front Body")){
             ArrayAdapter<String> myAdapter5 = new ArrayAdapter<String>(muscleGroupActivity.this, android.R.layout.simple_list_item_1,
                     getResources().getStringArray(R.array.frontBodyList));
@@ -74,10 +77,10 @@ public class muscleGroupActivity extends AppCompatActivity implements AdapterVie
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+    //Once the confirm button is pressed, return all of the user selected infomation back to the called activity.
     public void confirmButton(View v){
         Spinner exerciseSelection = (Spinner)findViewById(R.id.exerciseGroupSpinner);
         Spinner muscleGroupSelection = (Spinner)findViewById(R.id.muscleGroupSpinner);
-
 
         Intent intent = new Intent(this, setGoalActivity.class);
         intent.putExtra("muscleGroupName", muscleGroupSelection.getSelectedItem().toString());

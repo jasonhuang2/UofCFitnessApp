@@ -13,19 +13,21 @@ public class dateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.date_layout);
 
+        //This is for the back button.
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
+    //Once the confirm button is pressed.
     public void returnDateButton(View v){
 
         DatePicker theDatePicker = (DatePicker)findViewById(R.id.datePicker2) ;
 
-
+        //All I am doing here is extracting the day, month and year from the date picker; the user chosen date.
         int day = theDatePicker.getDayOfMonth();
         int month = theDatePicker.getMonth();
         int year = theDatePicker.getYear();
 
+        //Send all this data back to the class where it was called.
         Intent intent2 = new Intent(this, reminderActivity.class);
         intent2.putExtra("Date",String.valueOf(day));
         intent2.putExtra("Month",String.valueOf(month));

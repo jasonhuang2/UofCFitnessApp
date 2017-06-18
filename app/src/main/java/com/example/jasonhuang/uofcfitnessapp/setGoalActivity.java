@@ -37,20 +37,23 @@ public class setGoalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_goal_layout);
 
-        //For the back button
+        //Need these two lines in order to set the back button. Not only that, remember to change the AndroidManifest.xml file too to sync the activity with the button.
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         Button calendarButtonDate = (Button)findViewById(R.id.dateSetButton);
+
+        //User selected date, month and year will be returned to this activity so we can print it onto the button's text.
         Intent myintent = getIntent();
 
         String date = myintent.getStringExtra("Date");
         String month = myintent.getStringExtra("Month");
         String year = myintent.getStringExtra("Year");
 
-
-        if(date == null && gdate == null){                                                       //I need it to print (Date) instead of Null/Null/Null
+        //If it is null, then there is nothing in it.
+        //I need it to print (Date) instead of Null/Null/Null
+        if(date == null && gdate == null){
             calendarButtonDate.setText("(Date)");}
         else if (date != null){
             if (date.length() == 1 ){
@@ -75,13 +78,13 @@ public class setGoalActivity extends AppCompatActivity {
         }
 
         Button muscleExerciseText = (Button)findViewById((R.id.muscleGroupButton));
+        //Now we want the muscle group and exercise returned to this activity.
         Intent myintent2 = getIntent();
 
         String muscleGroupName = myintent2.getStringExtra("muscleGroupName");
-
         String exerciseName = myintent2.getStringExtra("exerciseName");
 
-
+        //If it is null then that means there is nothing in it.
         if(muscleGroupName == null && musclegroup == null){
             muscleExerciseText.setText("(Muscle Group and Exercise)");
         }else if (muscleGroupName != null){
@@ -93,7 +96,6 @@ public class setGoalActivity extends AppCompatActivity {
         }
 
     }
-
 
     //Button method to get to the calendar activity to set up a date
     public void calendarButton(View v){
@@ -107,9 +109,11 @@ public class setGoalActivity extends AppCompatActivity {
     }
     public void setButtonReturn(View v){
         conn = getConnection();
+        //Conversion of reps to string.
         EditText repCounter = (EditText)findViewById(R.id.numberofRepsInput);
         String rep = repCounter.getText().toString();
         reps = Integer.parseInt(rep);
+        //If all of these are NOT NULL than that means there is something in it. If so, store them all onto the database.
         if ((gdate != null) && (exercise != null) && (musclegroup != null) && (reps != 0) && (conn != null)){
             try{
             String query = "INSERT INTO " + db + ".dbo.goal(goalDate, muscleGroup, exercise, reps) VALUES ( '" + gdate + "', '"+ musclegroup +"' , '"+ exercise +"', " + reps + ")";
@@ -120,17 +124,16 @@ public class setGoalActivity extends AppCompatActivity {
 
                 e.printStackTrace();
             }
-
         }
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-
     }
-    //For testing
+    //For testing purposes.
     public Connection getConnection(){
         return connectionclass(un, pass, db, ip);
 
     }
+    //This is the connection class, what it does is it takes the username, ip address, password and logs us into our database.
     public Connection connectionclass (String user, String pass, String db, String server){
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);

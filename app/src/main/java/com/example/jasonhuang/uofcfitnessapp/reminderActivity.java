@@ -24,6 +24,7 @@ public class reminderActivity extends AppCompatActivity {
     TextView textBox;
     Intent my_intent;
     String date, month , year;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,9 +85,16 @@ public class reminderActivity extends AppCompatActivity {
             //Conversion 24 hours to 12 hours.
             hour = hour - 12;
             string_hour = Integer.toString(hour);
+
+            int a =Integer.parseInt(month);
+            a = a + 1;
+            month = Integer.toString(a);
             textBox.setText("Alarm set to: " + string_hour + ":" + string_minute + "pm" + " on " + month + "/" + date + "/" + year);
         }else{
             //Now display it onto the textbox
+            int a =Integer.parseInt(month);
+            a = a + 1;
+            month = Integer.toString(a);
             textBox.setText("Alarm set to: " + string_hour + ":" + string_minute + "am" + " on " + month + "/" + date + "/" + year);
         }
 
